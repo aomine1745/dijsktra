@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Dijsktra</title>
+ <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="vis/dist/vis.min.css">
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
+ <link rel="shortcut icon" href="https://aomine1745.github.io/ico/aomine.ico">
+</head>
+<body>
+  <section class="box box-one">
+    <h1 class="title">Dijsktra</h1>
+    <p id="numbersOfNodesText" class="numbersOfNodesText"></p>
+    <form id="addNodeForm" class="form addNodeForm">
+      <h2 class="form-title">Agregar un nodo</h2>
+      <div class="form-inputBox">
+        <input type="number" id="node" class="form-input" min="1" max="'+n+'" required>
+        <label for="node" class="form-label">Nodo</label>
+      </div>
+      <button type="submit" class="form-button">Agregar</button>
+    </form>
+
+    <form id="addAristForm" class="form addAristForm">
+      <h2 class="form-title">Agregar una relación entre nodos</h2>
+      <div class="form-grid">
+        <div class="form-inputBox">
+          <input type="number" id="initialRelation" class="form-input" min="1" max="10" required>
+          <label for="initialRelation" class="form-label">Relación inicial</label>
+        </div>
+        <div class="form-inputBox">
+          <input type="number" id="endRelation" class="form-input" min="1" max="10" required>
+          <label for="endRelation" class="form-label">Relación final</label>
+        </div>
+      </div>
+      <div class="form-inputBox">
+        <input type="number" id="aristValue" class="form-input" min="1" required>
+        <label for="aristValue" class="form-label">Valor de la arista</label>
+      </div>
+      <button type="submit" class="form-button">Agregar</button>
+    </form>
+  </section>
+
+  <section class="box">
+    <div id="canvas" class="canvas"></div>
+
+    <form id="generateMatrixForm" class="form addAristForm">
+      <h2 class="form-title">Encontrar el camino minimo</h2>
+      <div class="form-grid">
+        <div class="form-inputBox">
+          <input type="number" id="initialVertex" class="form-input" min="1" required>
+          <label for="initialVertex" class="form-label">Vertice inicial</label>
+        </div>
+        <div class="form-inputBox">
+          <input type="number" id="endVertex" class="form-input" min="1" required>
+          <label for="endVertex" class="form-label">Vertice final</label>
+        </div>
+      </div>
+      <button type="submit" class="form-button">Encontrar</button>
+    </form>
+  </section>
+
+  <div id="modal" class="modal init">
+    <div class="modal-box">
+      <div class="modal-box-item modal-result">
+        <div id="matrices" class="matrix"></div>
+        <button onclick="reload()" class="form-button">Otra vez!</button>
+      </div>
+      <div class="modal-box-item modal-numberOfNodes">
+        <form id="numbersOfNodesForm" class="form">
+          <h2 class="form-title">¿Cúantos nodos usaras?</h2>
+          <div class="form-inputBox">
+            <input type="number" id="numbersOfNodes" class="form-input" min="1" required>
+            <label for="numbersOfNodes" class="form-label">Número de nodos</label>
+          </div>
+          <button type="submit" class="form-button">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <p class="createBy">Developed by <a href="#!">Diego Valerio</a></p>
+
+  <script src="vis/dist/vis.min.js"></script>
+  <script src="js/app1.js"></script>
+  <script src="js/app2.js"></script>
+  <script src="js/app3.js"></script>
+</body>
+</html>
